@@ -12,10 +12,10 @@ addpath(genpath(pwd))
 drawnow
 
 A = ArDrone;
-A.mConnect;
+A.rConnect;
 
 % Decolar
-A.mTakeOff
+A.rTakeOff
 
 pause(5)
 
@@ -56,8 +56,8 @@ while toc(t) < tmax
 end
 
 % Aterrissar/Desconectar
-A.mLand
-A.mDisconnect
+A.rLand
+A.rDisconnect
 
 % display([pac_tot pac_rec])
 

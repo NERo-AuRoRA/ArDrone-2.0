@@ -10,7 +10,7 @@ try
 end
 % Rotina para buscar pasta raiz
 PastaAtual = pwd;
-PastaRaiz = 'AuRoRA 2018';
+PastaRaiz = 'AuRoRA';
 cd(PastaAtual(1:(strfind(PastaAtual,PastaRaiz)+numel(PastaRaiz)-1)))
 addpath(genpath(pwd))
 
@@ -18,7 +18,7 @@ A = ArDrone;
 A.rConnect;
 
 % Conectar Joystick
-J = JoyControl;
+%J = JoyControl;
 
 
 % =========================================================================
@@ -75,7 +75,7 @@ while toc(t) < tmax
         A.rGetSensorData
         A = cUnderActuatedController(A);
         % Joystick: Sobrepõe controlador
-        A = J.mControl(A);
+        %A = J.mControl(A);
         display(A.pSC.Xr([4 5 9 12])')
         display(A.pSC.Ud')
         disp('------------')
